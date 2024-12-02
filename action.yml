@@ -1,1 +1,3 @@
+name: 'invoke-google-cloud-functions'
+description: 'Invoke google cloud functions http trigger with service account credentials'
 
