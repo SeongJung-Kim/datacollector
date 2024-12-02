@@ -17,7 +17,6 @@ jobs:
       - name: Call Function
         uses: SeongJung-Kim/datacollector@master
         with:
-          service_account_key: ${{ secrets.SERVICE_ACCOUNT_KEY }}
           url: https://us-central1-tpcg-chatbot-dev.cloudfunctions.net/github-actions-test
           payload: |
             {"env": "prd"}
