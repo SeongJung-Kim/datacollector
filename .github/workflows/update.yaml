@@ -1,16 +1,24 @@
+# This is a basic workflow to help you get started with Actions
+
 name: Call Cloud Run Functions
 
+# Controls when the workflow will run
 on:
+  # Triggers the workflow on push or pull request events but only for the "master" branch
   push:
-    branches:
-      - master
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
 
-steps;
-- name: Call Function
-  uses: SeongJung-Kim/datacollector@master
-  with:
-    service_account_key: ${{ secrets.SERVICE_ACCOUNT_KEY }}
-    url: https://us-central1-tpcg-chatbot-dev.cloudfunctions.net/github-actions-test
-    payload: |
-      {"env": "prd"}
-    content_type: "application/json"
+jobs:
+  invoke-cloud-run-fuctions:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Call Function
+      uses: SeongJung-Kim/datacollector@master
+      with:
+        service_account_key: ${{ secrets.SERVICE_ACCOUNT_KEY }}
+        url: https://us-central1-tpcg-chatbot-dev.cloudfunctions.net/github-actions-test
+        payload: |
+          {"env": "prd"}
+        content_type: "application/json"
