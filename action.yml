@@ -3,4 +3,4 @@ description: 'Invoke google cloud functions http trigger with service account cr
 
 runs:
   using: 'node12'
-  main: 'dist/index.js'
+  main: 'index.js'
