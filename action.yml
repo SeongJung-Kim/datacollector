@@ -1,3 +1,6 @@
 name: 'invoke-google-cloud-functions'
 description: 'Invoke google cloud functions http trigger with service account credentials'
 
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
